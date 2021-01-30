@@ -1,0 +1,108 @@
+  @keyframes wait {
+    12.5% {
+      background-position-x: -4px,-4px,   -4px, -4px,  -4px,-4px,
+                             -4px,-4px,   -4px, -4px,   0,   0;
+    }
+    /* 8 étapes, à chaque étapes on fait avancer les rectangles vers la gauche */
+    25% {
+      background-position-x: -4px, -4px,  -4px, -4px,  -4px,-4px,
+                             -4px, -4px,   0,    0,     6px, 6px;
+    }
+    /* chaque position x correspond aux rectangles, 0 signifie qu'il au début de l'élément */
+    /* chaque rectangle à deux linear donc 2 position à préciser */
+    37.5% {
+      background-position-x: -4px, -4px,  -4px, -4px,  -4px, -4px,
+                              0,    0,     6px,  6px,  12px, 12px;
+    }
+    /* la largeur d'un rectangle est de 4px, donc 6px est égal à un rectangle plus un espace de marge */
+    /* on affiche 3 rectangle en même temps puis fait disparaître le rectangle sur la gauche comme à l'origine */
+    50%{
+      background-position-x: -4px, -4px,  -4px, -4px,   0,    0,
+                              6px,  6px,  12px, 12px,  -4px, -4px;
+    }
+    62.5% {
+      background-position-x: -4px, -4px,   0,    0,     6px,  6px,
+                             12px, 12px,  -4px, -4px,  -4px, -4px;
+    }
+    75% {
+      background-position-x:  0,    0,     6px,  6px,  12px, 12px,
+                             -4px, -4px,  -4px, -4px,  -4px, -4px;
+    }
+    87.5%{
+      background-position-x:  6px,  6px,  12px, 12px,  -4px, -4px,
+                             -4px, -4px,  -4px, -4px,  -4px, -4px;
+    }
+    100% {
+      background-position-x: 12px, 12px,  -4px, -4px,  -4px, -4px,
+                             -4px, -4px,  -4px, -4px,  -4px, -4px;
+    }
+  }
+
+  .squareandcircle {
+    zoom: 5; /* Increase this for a bigger symbol*/
+    width: 16px;
+    height: 16px;
+
+    background: linear-gradient(0deg, #f4f5fa 1px, transparent 0, transparent 8px, #f4f5fa 8px),   /* 6  */
+                linear-gradient(90deg, #f4f5fa 1px, #f6f9fb 0, #f6f9fb 3px, #f4f5fa 3px),
+/* 1er linear-gradient correspond au deux barres horizontale pour fermer le rectangle */
+/* le deuxième est pour les barres verticale et le centre */
+                linear-gradient(0deg, #ececf5 1px, transparent 0, transparent 8px, #ececf5 8px),   /* 5  */
+                linear-gradient(90deg, #ececf5 1px, #f2f3f9 0, #f2f3f9 3px, #ececf5 3px),
+/* on crée 6 rectangles, 2 grands, puis 1plus petit, puis 3 encore plus petit*/
+                linear-gradient(0deg, #e7eaf4 1px, transparent 0, transparent 8px, #e7eaf4 8px),   /* 4  */
+                linear-gradient(90deg, #e7eaf4 1px, #eef1f8 0, #eef1f8 3px, #e7eaf4 3px),
+
+                linear-gradient(0deg, #b9bedd 1px, transparent 0, transparent 10px, #b9bedd 10px), /* 3  */
+                linear-gradient(90deg, #b9bedd 1px, #d0d5e8 0, #d0d5e8 3px, #b9bedd 3px),
+
+                linear-gradient(0deg, #9fa6d2 1px, transparent 0, transparent 15px, #9fa6d2 15px), /* 2  */
+                linear-gradient(90deg, #9fa6d2 1px, #c0c5e1 0, #c0c5e1 3px, #9fa6d2 3px),
+
+                linear-gradient(0deg, #8490c6 1px, transparent 0, transparent 15px, #8490c6 15px), /* 1  */
+                 linear-gradient(90deg, #8490c6 1px, #aeb5da 0, #aeb5da 3px, #8490c6 3px); 
+  
+    background-repeat: no-repeat;
+
+    background-size: 
+               4px 9px,   /* 6 */
+               4px 9px,
+/* dans background size, on définit la taille de chacun des rectangles */
+/* 4px 9px, 4px 9px,  ->  size horizontale size verticale, size horizontale size verticale*/
+/* premier linear gr, deuxième linear-gr, */
+               4px 9px,   /* 5 */
+               4px 9px,
+
+               4px 9px,   /* 4 */
+               4px 9px,
+
+               4px 11px,  /* 3 */
+               4px 11px,
+
+               4px 16px,  /* 2 */
+               4px 16px,
+
+               4px 16px,  /* 1 */
+               4px 16px;
+
+  background-position-x: -4px; /* on positionne tout les rectangles à gauche de l'élément, puis on les fait défilé de G à D dans l'animation */
+  background-position-y: 3px, 3px, 3px, 3px, 3px, 3px, 2px, 2px, 0, 0, 0, 0;
+  /* on positionne tout les y pour centrer les rectangles et ne plus devoir y toucher après */
+  animation: wait .80s steps(1, start) infinite;
+  background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
